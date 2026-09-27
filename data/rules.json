@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "id": "404f1a74",
+      "name": "低頭",
+      "enabled": true,
+      "match": "all",
+      "hold_s": 3,
+      "message": "頭部低於坐正時，請抬頭",
+      "conditions": [
+        {
+          "metric": "POSITION",
+          "points": [
+            "nose"
+          ],
+          "axis": "Y",
+          "reference": "DIFF",
+          "low": null,
+          "high": -30,
+          "mode": "INSIDE"
+        }
+      ]
+    },
+    {
+      "id": "3f0a1dd3",
+      "name": "駝背",
+      "enabled": true,
+      "match": "all",
+      "hold_s": 5,
+      "message": "肩膀與頭部都下沉，請挺直背部",
+      "conditions": [
+        {
+          "metric": "POSITION",
+          "points": [
+            "mid_shoulder"
+          ],
+          "axis": "Y",
+          "reference": "DIFF",
+          "low": null,
+          "high": -15,
+          "mode": "INSIDE"
+        },
+        {
+          "metric": "POSITION",
+          "points": [
+            "nose"
+          ],
+          "axis": "Y",
+          "reference": "DIFF",
+          "low": null,
+          "high": -25,
+          "mode": "INSIDE"
+        }
+      ]
+    },
+    {
+      "id": "a0a3784e",
+      "name": "身體前傾（靠近螢幕）",
+      "enabled": true,
+      "match": "all",
+      "hold_s": 3,
+      "message": "離螢幕太近，請往後坐",
+      "conditions": [
+        {
+          "metric": "DISTANCE",
+          "points": [
+            "left_shoulder",
+            "right_shoulder"
+          ],
+          "axis": "Y",
+          "reference": "RATIO",
+          "low": 115,
+          "high": null,
+          "mode": "INSIDE"
+        }
+      ]
+    }
+  ]
+}

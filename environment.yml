@@ -1,0 +1,12 @@
+# 坐姿分析專案 conda 環境
+# 建立：conda env create -f environment.yml
+# 更新：conda env update -f environment.yml --prune
+name: posture
+channels:
+  - conda-forge
+  - nodefaults   # 只用 conda-forge，避開 Anaconda 預設通道的 ToS 限制
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - -r requirements.txt

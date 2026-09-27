@@ -1,0 +1,4 @@
+[tool.pytest.ini_options]
+testpaths = ["run"]
+python_files = ["test.py", "test_*.py"]
+pythonpath = ["run"]
