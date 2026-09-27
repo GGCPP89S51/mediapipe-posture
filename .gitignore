@@ -1,0 +1,18 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.vscode/
+.idea/
+
+# 模型檔由 scripts/download_models.py 下載，不進版控
+models/*.task
+models/*.part
+
+# 錄影、輸出資料
+data/raw/
+data/records/
+outputs/
+
+# 執行期錯誤紀錄
+logs/
